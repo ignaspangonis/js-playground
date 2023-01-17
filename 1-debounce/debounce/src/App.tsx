@@ -1,6 +1,6 @@
 import './App.css'
 
-import Debounce from './components/debounce'
+import Debounce from './components/Debounce'
 import UseDeferredValue from './components/UseDeferredValue'
 import UseTransition from './components/UseTransition'
 
