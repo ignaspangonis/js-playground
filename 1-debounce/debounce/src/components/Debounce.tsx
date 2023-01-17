@@ -1,14 +1,17 @@
 import { useCallback, useState } from 'react'
 
-function debounce(callback: (...args: any[]) => void, delay: number) {
-  let timeout: number
+function debounce<T extends ReadonlyArray<unknown>>(
+  callback: (...args: T) => void,
+  duration = 200
+) {
+  let timerId: number
 
-  return (...args: any[]) => {
-    clearTimeout(timeout)
+  return (...args: T) => {
+    clearTimeout(timerId)
 
-    timeout = setTimeout(() => {
+    timerId = setTimeout(() => {
       callback(...args)
-    }, delay)
+    }, duration)
   }
 }
 
