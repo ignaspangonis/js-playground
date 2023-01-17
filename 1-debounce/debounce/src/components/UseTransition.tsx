@@ -9,7 +9,7 @@ function UseTransition() {
     setInputValue(target.value)
     startTransition(() => {
       let newList: string[] = []
-      for (let i = 0; i < 30000; i++) {
+      for (let i = 0; i < 20000; i++) {
         newList.push(target.value)
       }
       setList(newList)
@@ -39,7 +39,7 @@ function UseTransition() {
           }}
         >
           {list.map((element) => (
-            <div>{element}</div>
+            <div key={element}>{element}</div>
           ))}
         </div>
       )}
